@@ -1,0 +1,22 @@
+---
+aws_access_key: "AKIAIDW6OOE2Y4KC7DLA"
+aws_secret_key: "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"
+region: "us-east-1"
+
+# VPC
+vpc_cidr: 10.10.0.0/24
+vpc_name: "Ansible VPC2"
+
+# Subnet
+subnet_name: "Ansible Subnet"
+subnet_cidr: 10.10.0.0/26
+
+igw_name: "Traffic IGW"
+
+
+#route table name
+route_name: "Public Ansible"
+
+securitygroup_name: "Ansible Security Group"
+
+ec2_tag: "WebServer"
