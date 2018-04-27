@@ -3,6 +3,8 @@ Role Name
 
 Ansible playbook to create a basic VPC in AWS
 
+<img src="https://infinitypp.com/wp-content/uploads/2018/04/Untitled-Diagram-2.png">
+
 Requirements
 ------------
 
