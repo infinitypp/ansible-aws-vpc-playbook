@@ -24,6 +24,7 @@
     cidr: "{{ subnet_cidr }}"
     aws_access_key: "{{ aws_access_key }}"
     aws_secret_key: "{{ aws_secret_key }}"
+    map_public: yes
     resource_tags:
       Name: "{{ subnet_name }}"
    register: subnet
@@ -71,16 +72,29 @@
       - proto: tcp
         ports:
         - 22
-        cidr_ip: 2.217.162.80/32
+        cidr_ip: 0.0.0.0/0
    register: security_group
 
  - name: create a new ec2 key pair, returns generated private key
    ec2_key:
     aws_access_key: "{{ aws_access_key }}"
     aws_secret_key: "{{ aws_secret_key }}"
-    name: ec2_keypair
+    name: "{{ keypair_name }}"
     region: "{{ region }}"
    register: keypair
+   tags:
+    - ec2_key
+
+ - debug:
+      var: keypair
+   tags:
+    - ec2_key
+
+ - name: Copy EC2 Key Pair private key locally
+   copy: content="{{ keypair.key.private_key }}" dest={{ ec2_key_directory }}key.ppk
+   when: keypair.changed == true
+   tags:
+    - ec2_key
 
  - name: Create EC2 Instance
    ec2:
@@ -95,6 +109,9 @@
     exact_count: 1
     aws_access_key: "{{ aws_access_key }}"
     aws_secret_key: "{{ aws_secret_key }}"
+
+
+
 
 
 

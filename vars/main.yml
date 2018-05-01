@@ -1,11 +1,12 @@
 ---
+
 aws_access_key: ""
 aws_secret_key: ""
 region: "us-east-1"
 
 # VPC
 vpc_cidr: 10.10.0.0/24
-vpc_name: "Ansible VPC2"
+vpc_name: "Ansible VPC3"
 
 # Subnet
 subnet_name: "Ansible Subnet"
@@ -20,3 +21,9 @@ route_name: "Public Ansible"
 securitygroup_name: "Ansible Security Group"
 
 ec2_tag: "WebServer"
+
+
+#key storage location
+ec2_key_directory: "/home/vagrant/masonfrank/"
+keypair_name: "ansible_key"
+
