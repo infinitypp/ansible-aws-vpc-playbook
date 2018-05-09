@@ -1,7 +1,8 @@
 Role Name
 =========
 
-Ansible playbook to create a basic VPC in AWS
+Ansible playbook to create a basic <a href="https://infinitypp.com/ansible/create-vpc-ansible-aws/">AWS VPC in Ansible</a>
+
 
 <img src="https://infinitypp.com/wp-content/uploads/2018/04/Untitled-Diagram-2.png">
 
